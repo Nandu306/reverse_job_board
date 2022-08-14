@@ -9,6 +9,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    abyme (0.6.6)
     actioncable (6.0.5.1)
       actionpack (= 6.0.5.1)
       nio4r (~> 2.0)
@@ -243,6 +244,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  abyme
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.2)
   byebug

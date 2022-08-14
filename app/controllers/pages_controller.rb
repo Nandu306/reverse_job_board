@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  private
+
+  # def role_params
+  #   params.permit(:role)
+  # end
 end
