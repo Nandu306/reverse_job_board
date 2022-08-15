@@ -10,3 +10,4 @@ application.load(definitionsFromContext(context))
 
 import { AbymeController } from 'abyme';
 application.register('abyme', AbymeController);
+
