@@ -21,8 +21,8 @@ import "controllers"
 import "bootstrap"
 
 
-document.addEventListener('turbolinks:load', () => {
-  $('.dropdown-toggle').dropdown()
-});
+// document.addEventListener('turbolinks:load', () => {
+//   $('.dropdown-toggle').dropdown()
+// });
 
 

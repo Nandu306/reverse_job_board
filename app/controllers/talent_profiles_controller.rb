@@ -30,7 +30,7 @@ class TalentProfilesController < ApplicationController
   private
 
   def talent_profile_params
-    params.require(:talent_profile).permit(:skills, :experience_years, :status, educations_attributes: [
+    params.require(:talent_profile).permit(:user_id, :skills, :experience_years, :status, educations_attributes: [
       :uni_name,
       :education_type,
       :field_of_study,

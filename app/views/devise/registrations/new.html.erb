@@ -12,18 +12,18 @@
               <%= f.input :email,
                           required: true,
                           autofocus: true,
-                          input_html: { autocomplete: "email" }%>
+                          input_html: { autocomplete: "email", style: "background-color:white" }%>
               <%= f.input :password,
                           required: true,
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                          input_html: { autocomplete: "new-password" } %>
+                          input_html: { autocomplete: "new-password", style: "background-color:white" } %>
               <%= f.input :password_confirmation,
                           required: true,
-                          input_html: { autocomplete: "new-password" } %>
+                          input_html: { autocomplete: "new-password", style: "background-color:white" } %>
               <%= f.input :role,
                           required: true,
                           label: "Role:",
-                          input_html: { autocomplete: "role" },
+                          input_html: { autocomplete: "role", style: "background-color:white" },
                           collection: ["Talent", "Recruiter"] %>
 
 
