@@ -1,1 +1,11 @@
-show.html.erb
+<% if current_user.talent_profile.pending? %>
+  <p> Your profile is being reviewd by our talent team. We will let you know once we have reviewed your profile.</p>
+<% elsif current_user.talent_profile.rejected? %>
+  <p> Unfortunately, your profile has not been selected this time round. </p>
+<% elsif current_user.talent_profile.accepted? %>
+  <p>Your profile is live and can be seen by recruiters.</p>
+<% end %>
+
+
+<%= current_user.talent_profile.skills %>
+<%= current_user.talent_profile.experience_years %>
