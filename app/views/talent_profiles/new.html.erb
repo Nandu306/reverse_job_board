@@ -1,0 +1,12 @@
+<%= simple_form_for(@talent_profile) do |f| %>
+  <%= f.input :skills %>
+  <%= f.input :experience_years, as: :integer %>
+
+  <%= f.abyme_for(:education, partial: 'talent_profiles/education_fields') do |abyme| %>
+    <%= abyme.records %>
+    <%= abyme.new_records %>
+    <%= add_associated_record(content: 'Add education') %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TalentProfileControllerTest < ActionDispatch::IntegrationTest
+class TalentProfilesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -7,4 +7,5 @@ class TalentProfile < ApplicationRecord
   abymize :education
 
   validates :experience_years, :skills, presence:true
+  accepts_nested_attributes_for :education
 end
