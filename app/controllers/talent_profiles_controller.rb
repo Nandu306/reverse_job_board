@@ -13,6 +13,20 @@ class TalentProfilesController < ApplicationController
     redirect_to dashboard_path, alert: "you've been added to the waiting list"
   end
 
+  def edit
+    @talent_profile = TalentProfile.find(params[:id])
+  end
+
+  def update
+    @talent_profile = TalentProfile.find(params[:id])
+    @talent_profile = TalentProfile.update(talent_profile_params)
+    redirect_to talent_profile_path(@talent_profile)
+  end
+
+  def show
+    @talent_profile = TalentProfile.find(params[:id])
+  end
+
   private
 
   def talent_profile_params

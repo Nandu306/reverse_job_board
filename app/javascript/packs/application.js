@@ -16,7 +16,13 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import "bootstrap"
+
 import "controllers"
+import "bootstrap"
+
+
+document.addEventListener('turbolinks:load', () => {
+  $('.dropdown-toggle').dropdown()
+});
 
 
