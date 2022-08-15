@@ -40,13 +40,16 @@ Kumar = User.find_or_initialize_by(first_name: 'Kumar', last_name: 'Das', email:
 Kumar.password = 'qwerty'
 Kumar.save
 
+Matt = User.find_or_initialize_by(first_name: 'Matt', last_name: 'Peters', email: 'matt@gmail.com', role: 'admin')
+Matt.password = 'qwerty'
+Matt.save
 
 # Talent Profiles
 
-Pierre_Profile = TalentProfile.find_or_initialize_by(experience_years:5, skills:'Rails', user: Pierre)
+Pierre_Profile = TalentProfile.find_or_initialize_by(experience_years:5, skills:'Rails', user: Pierre, status: 'accepted')
 Pierre_Profile.save
 
-Sarah_Profile = TalentProfile.find_or_initialize_by(experience_years:2, skills:'JavaScript', user: Sarah)
+Sarah_Profile = TalentProfile.find_or_initialize_by(experience_years:2, skills:'JavaScript', user: Sarah, status: 'accepted')
 Sarah_Profile.save
 
 

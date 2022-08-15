@@ -1,7 +1,19 @@
 <p> Welcome <%= current_user.first_name%> <%=current_user.last_name %></p>
-
-<% if current_user.talent_profile.present? %>
-    <%= link_to 'Go to your profile', talent_profile_path(:talent_profile_id) %>
-<% else %>
-    <%= link_to 'Create a profile', new_talent_profile_path %>
+<% if current_user.talent? %>
+  <% if current_user.talent_profile.present? %>
+      <%= link_to 'Go to your profile', talent_profile_path(:talent_profile_id) %>
+  <% else %>
+      <%= link_to 'Create a profile', new_talent_profile_path %>
+  <% end %>
+<% elsif current_user.recruiter? %>
+  <p> You are a nasty recruiter </p>
+ <% elsif current_user.admin? %>
+  <% TalentProfile.where(status: 'pending').each do |talent_profile| %>
+    <%= talent_profile.user.first_name %>
+    <%= talent_profile.user.last_name %>
+    <%= talent_profile.skills %>
+    <%= talent_profile.experience_years %>
+  <% end %>
 <% end %>
+
+
