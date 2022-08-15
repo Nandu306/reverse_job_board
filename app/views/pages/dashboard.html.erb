@@ -13,6 +13,8 @@
     <%= talent_profile.user.last_name %>
     <%= talent_profile.skills %>
     <%= talent_profile.experience_years %>
+    <%= link_to 'Accept', edit_talent_profile_path(id: talent_profile.id, status: 'accepted') %>
+    <%= link_to 'Reject', edit_talent_profile_path(id: talent_profile.id, status: 'rejected') %>
   <% end %>
 <% end %>
 

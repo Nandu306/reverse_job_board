@@ -24,7 +24,7 @@
                           required: true,
                           label: "Role:",
                           input_html: { autocomplete: "role" },
-                          collection: User.roles.map { |key, value| [key.humanize, key] } %>
+                          collection: ["Talent", "Recruiter"] %>
 
 
           <br>
@@ -43,3 +43,6 @@
     </div>
   </div>
 </div>
+
+
+<!-- collection: ["User.roles.map { |key, value| [key.humanize, key] }"] -->
