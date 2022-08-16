@@ -1,4 +1,5 @@
-<p> Welcome <%= current_user.first_name%> <%=current_user.last_name %></p>
+<strong> Welcome <%= current_user.first_name.capitalize%> <%=current_user.last_name.capitalize %> 👋🏽 </strong>
+
 <% if current_user.talent? %>
   <% if current_user.talent_profile.present? %>
       <%= link_to 'Go to your profile', talent_profile_path(current_user.talent_profile.id) %>

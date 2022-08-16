@@ -32,6 +32,7 @@ gem 'devise'
 
 #gems added my me
 gem 'abyme'
+gem "pundit"
 
 
 gem 'autoprefixer-rails', '10.2.5'

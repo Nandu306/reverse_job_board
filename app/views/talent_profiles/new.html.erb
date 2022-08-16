@@ -9,5 +9,11 @@
     <%= add_associated_record(content: 'Add education') %>
   <% end %>
 
+  <%= f.abyme_for(:work_experiences, partial: 'talent_profiles/work_experiences_fields') do |abyme| %>
+    <%= abyme.records %>
+    <%= abyme.new_records %>
+    <%= add_associated_record(content: 'Add work experience') %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
