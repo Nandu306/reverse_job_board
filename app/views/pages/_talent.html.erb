@@ -1,0 +1,5 @@
+<% if current_user.talent_profile.present? %>
+    <%= link_to 'Go to your profile', talent_profile_path(current_user.talent_profile.id) %>
+<% else %>
+    <%= link_to 'Create a profile', new_talent_profile_path %>
+<% end %>

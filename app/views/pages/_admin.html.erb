@@ -1,0 +1,12 @@
+<% if TalentProfile.where(status: 'pending').any? %>
+  <% TalentProfile.where(status: 'pending').each do |talent_profile| %>
+   <%= talent_profile.user.first_name %>
+   <%= talent_profile.user.last_name %>
+   <%= talent_profile.skills %>
+   <%= talent_profile.experience_years %>
+   <%= link_to 'Accept', edit_talent_profile_path(id: talent_profile.id, status: 'accepted') %>
+   <%= link_to 'Reject', edit_talent_profile_path(id: talent_profile.id, status: 'rejected') %>
+ <% end %>
+<% else %>
+  <p>You don't have any profiles to review</p>
+<% end %>

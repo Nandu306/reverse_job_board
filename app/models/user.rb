@@ -12,5 +12,6 @@ class User < ApplicationRecord
   has_one :talent_profile, dependent: :destroy
   has_one :company_profile, dependent: :destroy
   has_many :education, through: :talent_profile
+  has_many :jobs, through: :company_profile
 
 end
