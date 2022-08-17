@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-
   def index
     @jobs = Job.where(company_profile: current_user.company_profile)
   end

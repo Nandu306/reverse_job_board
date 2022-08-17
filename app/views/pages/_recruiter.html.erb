@@ -1,0 +1,9 @@
+<% if current_user.company_profile.present? %>
+    <%= link_to 'Go to your company profile', company_profile_path(current_user.company_profile.id) %>
+    <%= link_to 'Post a job', new_company_profile_job_path(current_user.company_profile.id) %>
+    <% Job.where(company_profile: current_user.company_profile).each do |job| %>
+      <%= job.title %>
+    <% end %>
+<% else %>
+    <%= link_to 'Create a company profile', new_company_profile_path %>
+<% end %>
