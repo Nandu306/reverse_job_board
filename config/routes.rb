@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :education
   end
 
+  resources :company_profiles do
+    resources :jobs
+  end
 get '/dashboard', to: 'pages#dashboard'
 end
