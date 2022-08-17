@@ -9,6 +9,14 @@
             <%= f.error_notification %>
 
 
+              <%= f.input :first_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "first_name", style: "background-color:white" }%>
+              <%= f.input :last_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "last_name", style: "background-color:white" }%>
               <%= f.input :email,
                           required: true,
                           autofocus: true,
@@ -24,7 +32,7 @@
                           required: true,
                           label: "Role:",
                           input_html: { autocomplete: "role", style: "background-color:white" },
-                          collection: ["Talent", "Recruiter"] %>
+                          collection: User.roles.map { |key, value| [key.humanize, key] } %>
 
 
           <br>

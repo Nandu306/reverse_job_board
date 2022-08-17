@@ -18,10 +18,13 @@
             <br>
 
             <% if  user_signed_in? %>
-              <%= link_to 'Go to dashboard', dashboard_path, class: "home-button-1" %>
+              <%= link_to 'Go to dashboard', dashboard_path, class: "home-button-1 link-to-button" %>
             <% else %>
-              <%= link_to 'Get started', new_user_registration_path, class: "home-button-1" %>
-              <p> Log in <%= link_to 'here', new_user_session_path %> if you already have an account </p>
+            <div class="d-flex flex-column align-items-center">
+              <%= link_to 'Get started', new_user_registration_path, class: "home-button-1 link-to-button mb-2" %>
+              <small><%= link_to 'Log in', new_user_session_path %> if you already have an account </small>
+            </div>
+
             <% end %>
 
           </div>
