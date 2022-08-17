@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_16_152958) do
+ActiveRecord::Schema.define(version: 2022_08_17_075418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "company_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "industry"
+    t.string "description"
+    t.string "location"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_company_profiles_on_user_id"
+  end
 
   create_table "educations", force: :cascade do |t|
     t.string "uni_name"
@@ -26,6 +37,19 @@ ActiveRecord::Schema.define(version: 2022_08_16_152958) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "talent_profile_id", null: false
     t.index ["talent_profile_id"], name: "index_educations_on_talent_profile_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "roles_and_responsibilities"
+    t.string "salary"
+    t.string "must_have_skills"
+    t.string "nice_to_have_skills"
+    t.integer "exp_level"
+    t.bigint "company_profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_profile_id"], name: "index_jobs_on_company_profile_id"
   end
 
   create_table "talent_profiles", force: :cascade do |t|
@@ -65,7 +89,9 @@ ActiveRecord::Schema.define(version: 2022_08_16_152958) do
     t.index ["talent_profile_id"], name: "index_work_experiences_on_talent_profile_id"
   end
 
+  add_foreign_key "company_profiles", "users"
   add_foreign_key "educations", "talent_profiles"
+  add_foreign_key "jobs", "company_profiles"
   add_foreign_key "talent_profiles", "users"
   add_foreign_key "work_experiences", "talent_profiles"
 end

@@ -1,0 +1,9 @@
+<%= simple_form_for([@company_profile,@job]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :roles_and_responsibilities %>
+  <%= f.input :exp_level%>
+  <%= f.input :must_have_skills%>
+  <%= f.input :nice_to_have_skills%>
+  <%= f.input :salary%>
+  <%= f.submit %>
+<% end %>
