@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one :talent_profile, dependent: :destroy
+  has_one :status, through: :talent_profile
   has_one :company_profile, dependent: :destroy
   has_many :education, through: :talent_profile
   has_many :jobs, through: :company_profile

@@ -1,5 +1,18 @@
 <% if current_user.talent_profile.present? %>
     <%= link_to 'Go to your profile', talent_profile_path(current_user.talent_profile.id) %>
+
+    <% if current_user.talent_profile.accepted? %>
+      <h2 class="mt-3">Current job posts</h2>
+        <% Job.all.each do |job| %>
+          <p> Job title: <%= job.title %> </p>
+        <% end %>
+    <% end %>
 <% else %>
     <%= link_to 'Create a profile', new_talent_profile_path %>
 <% end %>
+
+
+
+
+
+

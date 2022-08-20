@@ -8,6 +8,9 @@
 
 puts "Preparing to seed data..."
 
+Job.destroy_all
+CompanyProfile.destroy_all
+WorkExperience.destroy_all
 Education.destroy_all
 TalentProfile.destroy_all
 User.destroy_all
